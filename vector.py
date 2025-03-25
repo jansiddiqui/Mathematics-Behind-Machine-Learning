@@ -69,6 +69,22 @@ s = np.dot(v, w)
 print("v • w (dot product) =", s)  # Output: 3
 
 
+def normalize_vector(v):
+    """
+    Normalizes the given vector to have a magnitude of 1.
+    
+    Parameters:
+    v (numpy.ndarray): Input vector to be normalized
+    
+    Returns:
+    numpy.ndarray: Normalized vector (unit vector)
+    """
+    norm = np.linalg.norm(v)  # Calculate the magnitude (norm) of the vector
+    if norm == 0:  # Prevent division by zero
+        return v  # Return the original vector if it has zero length
+    return v / norm  # Return the normalized vector
+
+
 # Example applications:
 
 # a. Representing data points: Each data point in a dataset can be represented as a vector. For example,
